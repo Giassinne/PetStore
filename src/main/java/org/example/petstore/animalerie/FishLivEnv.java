@@ -1,6 +1,6 @@
 package animalerie;
 
-public enum Fish_ivFnv {
+public enum FishLivEnv {
     FRESH_WATER,
     SEA_WATER
 }
