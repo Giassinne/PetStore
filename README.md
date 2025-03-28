@@ -33,13 +33,14 @@ src/main/java/org/example/petstore/
 │       └── ProductService.java
 └── controller/
     └── ProductController.java
+```
 
 ### 📌 Configuration MySQL
+```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/petstore
 spring.datasource.username=root
 spring.datasource.password=your_password
 
-### 📌 Hibernate
 spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
