@@ -1,11 +1,9 @@
-package animalerie;
-
+package org.example.petstore.animalerie.model;
 import jakarta.persistence.*;
-import java.util.Date;
 
+import java.util.Date;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "animal")
 public abstract class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

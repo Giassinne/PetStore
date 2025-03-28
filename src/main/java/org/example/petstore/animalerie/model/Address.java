@@ -1,9 +1,6 @@
-package animalerie;
-
+package org.example.petstore.animalerie.model;
 import jakarta.persistence.*;
-
 @Entity
-@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

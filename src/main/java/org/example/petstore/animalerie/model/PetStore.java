@@ -1,6 +1,7 @@
-package animalerie;
+package org.example.petstore.animalerie.model;
 
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -11,6 +12,14 @@ public class PetStore {
 
     private String name;
     private String managerName;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
+    @ManyToMany
+    private List<Product> products;
+
+    @OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL)
+    private List<Animal> animals;
 
     public Long getId() {
         return id;
@@ -59,13 +68,4 @@ public class PetStore {
     public void setAnimals(List<Animal> animals) {
         this.animals = animals;
     }
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address address;
-
-    @ManyToMany
-    private List<Product> products;
-
-    @OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL)
-    private List<Animal> animals;
 }
