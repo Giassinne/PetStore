@@ -1,6 +1,6 @@
-package org.example.petstore.animalerie.Repos;
+package org.example.petstore.animalerie.repos;
 
-import org.example.petstore.animalerie.Address;
+import org.example.petstore.animalerie.model.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

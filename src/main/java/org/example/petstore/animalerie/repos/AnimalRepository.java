@@ -1,6 +1,6 @@
-package org.example.petstore.animalerie.Repos;
+package org.example.petstore.animalerie.repos;
 
-import org.example.petstore.animalerie.Animal;
+import org.example.petstore.animalerie.model.Animal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

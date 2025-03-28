@@ -1,4 +1,4 @@
-package animalerie;
+package org.example.petstore.animalerie.model;
 
 import jakarta.persistence.Entity;
 

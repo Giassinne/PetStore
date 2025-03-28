@@ -1,6 +1,7 @@
-package animalerie;
+package org.example.petstore.animalerie.model;
 
 import jakarta.persistence.*;
+import org.example.petstore.animalerie.enums.ProdType;
 
 @Entity
 public class Product {
