@@ -25,7 +25,7 @@ public class PetstoreApplication {
             ProductRepository productRepository,
             AnimalRepository animalRepository) {
         return args -> {
-            // Create French Addresses
+            // Create  Addresses
             Address address1 = new Address();
             address1.setNumber("12");
             address1.setStreet("Rue des Animaux");
@@ -44,7 +44,7 @@ public class PetstoreApplication {
             address3.setZipCode("13001");
             address3.setCity("Marseille");
 
-            // Create French Pet Stores
+            // Create  Pet Stores
             PetStore store1 = new PetStore();
             store1.setName("Paradis des Animaux");
             store1.setManagerName("Jean Dupont");
@@ -65,7 +65,6 @@ public class PetstoreApplication {
             petStoreRepository.save(store2);
             petStoreRepository.save(store3);
 
-            // Create French Products
             Product product1 = new Product();
             product1.setCode("NOURRITURE001");
             product1.setLabel("Croquettes Premium pour Chats");
@@ -90,7 +89,7 @@ public class PetstoreApplication {
             productRepository.save(product2);
             productRepository.save(product3);
 
-            // Create French Animals
+            // Create  Animals
             Cat cat1 = new Cat();
             cat1.setBirth(new Date());
             cat1.setCouleur("Blanc");
@@ -101,30 +100,35 @@ public class PetstoreApplication {
             cat2.setBirth(new Date());
             cat2.setCouleur("Noir");
             cat2.setChipId("PUCE002");
+            cat2.setPetStore(store2);
 
 
             Cat cat3 = new Cat();
             cat3.setBirth(new Date());
             cat3.setCouleur("Tigré");
             cat3.setChipId("PUCE003");
+            cat3.setPetStore(store1);
 
 
             Fish fish1 = new Fish();
             fish1.setBirth(new Date());
             fish1.setCouleur("Or");
             fish1.setLivingEnv(FishLivEnv.FRESH_WATER);
+            fish1.setPetStore(store1);
 
 
             Fish fish2 = new Fish();
             fish2.setBirth(new Date());
             fish2.setCouleur("Bleu");
             fish2.setLivingEnv(FishLivEnv.SEA_WATER);
+            fish2.setPetStore(store2);
 
 
             Fish fish3 = new Fish();
             fish3.setBirth(new Date());
             fish3.setCouleur("Rouge");
             fish3.setLivingEnv(FishLivEnv.FRESH_WATER);
+            fish3.setPetStore(store3);
 
 
             animalRepository.save(cat1);
