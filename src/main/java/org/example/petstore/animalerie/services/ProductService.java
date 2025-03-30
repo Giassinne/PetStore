@@ -2,6 +2,8 @@ package org.example.petstore.animalerie.services;
 
 import org.example.petstore.animalerie.model.Product;
 import org.example.petstore.animalerie.repos.ProductRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.Optional;
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
+    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
+
 
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
@@ -21,7 +25,7 @@ public class ProductService {
         // If multiple products found, you might want to log a warning
         if (products.size() > 1) {
             // Log warning about multiple products with same code
-            System.out.println("Warning: Multiple products found with code: " + code);
+            logger.warn("Warning: Multiple products found with code: {}", code);
         }
 
         // Return the first product if exists

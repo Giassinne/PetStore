@@ -1,27 +1,28 @@
 package org.example.petstore.controller;
 
 import org.example.petstore.animalerie.model.Animal;
-import org.example.petstore.animalerie.repos.AnimalRepository;
 import org.example.petstore.animalerie.model.Product;
+import org.example.petstore.animalerie.repos.AnimalRepository;
 import org.example.petstore.animalerie.repos.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class PetStoreController {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
-    @Autowired
-    private AnimalRepository animalRepository;
+    private final AnimalRepository animalRepository;
+
+    public PetStoreController(ProductRepository productRepository, AnimalRepository animalRepository) {
+        this.productRepository = productRepository;
+        this.animalRepository = animalRepository;
+    }
 
     // Récupère tous les produits par code produit
     @GetMapping("/products/{code}")

@@ -2,7 +2,6 @@ package org.example.petstore.controller;
 
 import org.example.petstore.animalerie.model.Animal;
 import org.example.petstore.animalerie.services.AnimalService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +14,11 @@ import java.util.List;
 @RequestMapping("/api/animaux")
 public class AnimalController {
 
-    @Autowired
-    private AnimalService animalService;
+    private final AnimalService animalService;
+
+    public AnimalController(AnimalService animalService) {
+        this.animalService = animalService;
+    }
 
     @GetMapping("/animalerie/{animalerieId}")
     public ResponseEntity<List<Animal>> getAnimalsByAnimalerie(@PathVariable Long animalerieId) {
