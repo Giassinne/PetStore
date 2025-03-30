@@ -4,14 +4,14 @@ import org.apache.catalina.core.ApplicationContext;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.springframework.test.util.AssertionErrors.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class PetStoreApplicationTests {
 
     @Test
     void contextLoads(ApplicationContext context) {
-        assertNotNull(String.valueOf(context), "Application context should not be null");
+        assertNotNull(context, "Application context should not be null");
     }
 
 }
