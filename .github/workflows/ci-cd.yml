@@ -63,8 +63,10 @@ jobs:
 
       - name: Install Trivy
         run: |
-          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
+          curl -sfL https://github.com/aquasecurity/trivy/releases/download/v0.61.0/trivy_0.61.0_Linux-64bit.tar.gz -o trivy.tar.gz
+          tar -zxvf trivy.tar.gz
           sudo mv trivy /usr/local/bin/
+          rm trivy.tar.gz
 
       - name: Scan for vulnerabilities
         run: trivy fs --exit-code 1 .
@@ -86,7 +88,7 @@ jobs:
         run: mvn package
 
       - name: Upload JAR Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.0.1
         with:
           name: application-jar
           path: target/*.jar
