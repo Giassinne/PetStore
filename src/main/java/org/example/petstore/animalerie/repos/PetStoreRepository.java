@@ -10,3 +10,4 @@ import java.util.Optional;
 public interface PetStoreRepository extends JpaRepository<PetStore, Long> {
     Optional<PetStore> findByName(String name);
 }
+

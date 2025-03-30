@@ -13,3 +13,4 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
     @Query("SELECT a FROM Animal a WHERE a.petStore.id = :storeId")
     List<Animal> findAnimalsByPetStore(@Param("storeId") Long storeId);
 }
+

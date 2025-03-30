@@ -22,11 +22,20 @@ public class PetstoreApplication {
     public static void main(String[] args) {
         SpringApplication.run(PetstoreApplication.class, args);
     }
+
+    /**
+     * Initializes the database with pet stores, products, and animals.
+     *
+     * @param petStoreRepository Repository for saving pet store data.
+     * @param productRepository Repository for saving product data.
+     * @param animalRepository Repository for saving animal data.
+     * @return A CommandLineRunner that will initialize the database.
+     */
     @Bean
     CommandLineRunner initDatabase(
-            PetStoreRepository petStoreRepository,
-            ProductRepository productRepository,
-            AnimalRepository animalRepository) {
+           final PetStoreRepository petStoreRepository,
+           final ProductRepository productRepository,
+           final AnimalRepository animalRepository) {
         return args -> {
             // Create  Addresses
             Address address1 = new Address();
@@ -143,3 +152,4 @@ public class PetstoreApplication {
         };
     }
 }
+

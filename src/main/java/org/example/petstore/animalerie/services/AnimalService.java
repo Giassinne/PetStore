@@ -19,3 +19,4 @@ public class AnimalService {
         return animalRepository.findAnimalsByPetStore(animalerieId);
     }
 }
+
