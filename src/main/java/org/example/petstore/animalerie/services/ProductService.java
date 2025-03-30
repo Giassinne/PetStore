@@ -26,7 +26,7 @@ public class ProductService {
         // If multiple products found, you might want to log a warning
         if (products.size() > 1) {
             // Log warning about multiple products with same code
-            logger.warn(Constants.WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE, code);
+            logger.warn(Constants.WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE);
         }
 
         // Return the first product if exists
