@@ -47,6 +47,8 @@ jobs:
             ${{ runner.os }}-maven-
             ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
+      - name: Set SONAR_HOST_URL
+        run: echo "SONAR_HOST_URL=https://sonarcloud.io" >> $GITHUB_ENV
 
       - name: Build and Analyze with SonarCloud
         run: mvn clean verify sonar:sonar
