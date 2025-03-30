@@ -12,7 +12,6 @@ jobs:
   lint:
     name: Run Linter
     runs-on: ubuntu-latest
-    if: ${{ false }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -24,6 +23,7 @@ jobs:
           java-version: '17'
 
       - name: Run Checkstyle
+        if: ${{ false }}
         run: mvn checkstyle:check
 
   sonar:
