@@ -28,6 +28,7 @@ jobs:
   sonar:
     name: SonarCloud Analysis
     runs-on: ubuntu-latest
+    needs: lint
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
