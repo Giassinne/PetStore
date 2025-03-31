@@ -56,7 +56,8 @@ public final class Constants {
     public static final String NUMBER4 = "75001";
     public static final String RUE_DES_ANIMAUX = "Rue des Animaux";
     public static final String NUMBER5 = "12";
-    public static final String WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE = "Warning: Multiple products found with code: {}";
+    public static final String WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE =
+            "Warning: Multiple products found with code: {}";
 
     // Private constructor to prevent instantiation
     private Constants() {

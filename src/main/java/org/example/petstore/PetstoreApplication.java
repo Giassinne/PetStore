@@ -28,7 +28,8 @@ import java.util.Date;
 /**
  * Main class for the Petstore application.
  * <p>
- * This is the entry point for the Spring Boot application, responsible for launching the application and initializing the database with
+ * This is the entry point for the Spring Boot application,
+ * responsible for launching the application and initializing the database with
  * pet stores, products, and animals.
  * </p>
  *
@@ -44,7 +45,7 @@ public class PetstoreApplication {
      *
      * @param args Command-line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(PetstoreApplication.class, args);
     }
 

@@ -46,7 +46,7 @@ public class PetStoreController {
      * @return A list of {@link Product} objects matching the given code.
      */
     @GetMapping("/products/{code}")
-    public List<Product> getProductsByCode(@PathVariable String code) {
+    public List<Product> getProductsByCode(@PathVariable final String code) {
         // Appelle la méthode dans ProductRepository pour récupérer les produits par code
         return productRepository.findByCode(code);
     }
@@ -58,7 +58,7 @@ public class PetStoreController {
      * @return A list of {@link Animal} objects belonging to the specified pet store.
      */
     @GetMapping("/animals/{petStoreId}")
-    public List<Animal> getAnimalsByPetStoreId(@PathVariable Long petStoreId) {
+    public List<Animal> getAnimalsByPetStoreId(@PathVariable final Long petStoreId) {
         // Appelle la méthode dans AnimalRepository pour récupérer les animaux par animalerie
         return animalRepository.findAnimalsByPetStore(petStoreId);
     }

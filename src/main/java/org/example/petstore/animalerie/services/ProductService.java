@@ -36,7 +36,7 @@ public class ProductService {
     /**
      * Logger instance for logging important service-level information.
      */
-    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
     /**
      * Retrieves a product based on its unique code.
@@ -49,13 +49,13 @@ public class ProductService {
      * </ul>
      * @implNote If multiple products are found with the same code, a warning is logged.
      */
-    public Optional<Product> getProductsByCode(String code) {
+    public Optional<Product> getProductsByCode(final String code) {
         List<Product> products = productRepository.findByCode(code);
 
         // If multiple products found, you might want to log a warning
         if (products.size() > 1) {
             // Log warning about multiple products with same code
-            logger.warn(Constants.WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE);
+            LOGGER.warn(Constants.WARNING_MULTIPLE_PRODUCTS_FOUND_WITH_CODE);
         }
 
         // Return the first product if exists

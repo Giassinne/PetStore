@@ -45,7 +45,7 @@ public class AnimalController {
      * </ul>
      */
     @GetMapping("/animalerie/{animalerieId}")
-    public ResponseEntity<List<Animal>> getAnimalsByAnimalerie(@PathVariable Long animalerieId) {
+    public ResponseEntity<List<Animal>> getAnimalsByAnimalerie(@PathVariable final Long animalerieId) {
         List<Animal> animals = animalService.getAnimalsByAnimalerie(animalerieId);
         if (animals.isEmpty()) {
             return ResponseEntity.noContent().build();  // Retourne HTTP 204 si aucun animal n'est trouvé

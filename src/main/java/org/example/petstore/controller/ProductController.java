@@ -47,7 +47,8 @@ public class ProductController {
      * </ul>
      */
     @GetMapping("/code")
-    public ResponseEntity<Product> getProductsByCode(@RequestParam @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Invalid code format") String code) {
+    public ResponseEntity<Product> getProductsByCode(@RequestParam @Pattern(regexp = "^[a-zA-Z0-9]+$",
+            message = "Invalid code format") final String code) {
         return productService.getProductsByCode(code)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

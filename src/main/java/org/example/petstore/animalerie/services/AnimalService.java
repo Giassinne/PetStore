@@ -34,7 +34,7 @@ public class AnimalService {
      * @return A {@link List} of {@link Animal} objects associated with the given pet store.
      * Returns an empty list if no animals are found.
      */
-    public List<Animal> getAnimalsByAnimalerie(Long animalerieId) {
+    public List<Animal> getAnimalsByAnimalerie(final Long animalerieId) {
         return animalRepository.findAnimalsByPetStore(animalerieId);
     }
 }
