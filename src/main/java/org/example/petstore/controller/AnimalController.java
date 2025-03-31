@@ -11,13 +11,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller for handling animal-related operations.
+ * <p>
+ * This controller provides an endpoint to retrieve a list of animals
+ * from a specific animalerie (pet store).
+ * </p>
+ *
+ * <p>Uses {@link AnimalService} to fetch data.</p>
+ *
+ * @author Your Name
+ * @version 1.0
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/animaux")
 public class AnimalController {
 
     private final AnimalService animalService;
-    
+
+
+    /**
+     * Retrieves a list of animals belonging to a specific animalerie (pet store).
+     *
+     * @param animalerieId The ID of the animalerie to search for.
+     * @return A {@link ResponseEntity} containing:
+     * <ul>
+     *    <li>HTTP 200 (OK) with a list of {@link Animal} objects if found.</li>
+     *    <li>HTTP 204 (No Content) if no animals are found.</li>
+     * </ul>
+     */
     @GetMapping("/animalerie/{animalerieId}")
     public ResponseEntity<List<Animal>> getAnimalsByAnimalerie(@PathVariable Long animalerieId) {
         List<Animal> animals = animalService.getAnimalsByAnimalerie(animalerieId);

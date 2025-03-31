@@ -11,12 +11,36 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service class for handling business logic related to products.
+ * <p>
+ * This service provides functionality to retrieve a product by its unique code.
+ * </p>
+ *
+ * <p>Uses {@link ProductRepository} for database operations.</p>
+ *
+ * <p>Logs a warning if multiple products are found with the same code.</p>
+ *
+ * @author Your Name
+ * @version 1.0
+ */
 @Service
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
-    
+
+    /**
+     * Retrieves a product based on its unique code.
+     *
+     * @param code The product code used to search for the product.
+     * @return An {@link Optional} containing:
+     * <ul>
+     *     <li>The first {@link Product} found, if available.</li>
+     *     <li>An empty {@link Optional} if no product matches the given code.</li>
+     * </ul>
+     * @implNote If multiple products are found with the same code, a warning is logged.
+     */
     public Optional<Product> getProductsByCode(String code) {
         List<Product> products = productRepository.findByCode(code);
 
