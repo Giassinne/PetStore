@@ -1,5 +1,6 @@
 package org.example.petstore.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.petstore.animalerie.model.Animal;
 import org.example.petstore.animalerie.model.Product;
 import org.example.petstore.animalerie.repos.AnimalRepository;
@@ -12,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class PetStoreController {
 
     private final ProductRepository productRepository;
 
     private final AnimalRepository animalRepository;
-
-    public PetStoreController(ProductRepository productRepository, AnimalRepository animalRepository) {
-        this.productRepository = productRepository;
-        this.animalRepository = animalRepository;
-    }
+    
 
     // Récupère tous les produits par code produit
     @GetMapping("/products/{code}")

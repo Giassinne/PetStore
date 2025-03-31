@@ -1,5 +1,6 @@
 package org.example.petstore.animalerie.services;
 
+import lombok.RequiredArgsConstructor;
 import org.example.petstore.animalerie.constants.Constants;
 import org.example.petstore.animalerie.model.Product;
 import org.example.petstore.animalerie.repos.ProductRepository;
@@ -11,15 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
-
-
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
-
+    
     public Optional<Product> getProductsByCode(String code) {
         List<Product> products = productRepository.findByCode(code);
 

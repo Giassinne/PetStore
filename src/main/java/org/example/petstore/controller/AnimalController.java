@@ -1,5 +1,6 @@
 package org.example.petstore.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.petstore.animalerie.model.Animal;
 import org.example.petstore.animalerie.services.AnimalService;
 import org.springframework.http.ResponseEntity;
@@ -11,15 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/animaux")
 public class AnimalController {
 
     private final AnimalService animalService;
-
-    public AnimalController(AnimalService animalService) {
-        this.animalService = animalService;
-    }
-
+    
     @GetMapping("/animalerie/{animalerieId}")
     public ResponseEntity<List<Animal>> getAnimalsByAnimalerie(@PathVariable Long animalerieId) {
         List<Animal> animals = animalService.getAnimalsByAnimalerie(animalerieId);

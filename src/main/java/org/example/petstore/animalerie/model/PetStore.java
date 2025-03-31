@@ -9,7 +9,6 @@ import java.util.List;
 @Setter
 @Getter
 @Entity
-
 public class PetStore {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
