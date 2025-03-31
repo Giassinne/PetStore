@@ -22,6 +22,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AnimalService {
 
+    /**
+     * Repository for accessing animal data.
+     */
     private final AnimalRepository animalRepository;
 
     /**
@@ -35,4 +38,5 @@ public class AnimalService {
         return animalRepository.findAnimalsByPetStore(animalerieId);
     }
 }
+
 

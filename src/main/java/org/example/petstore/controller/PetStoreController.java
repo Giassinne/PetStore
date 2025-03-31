@@ -29,8 +29,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class PetStoreController {
 
+    /**
+     * Repository for managing products in the pet store.
+     */
     private final ProductRepository productRepository;
 
+    /**
+     * Repository for managing animals in the pet store.
+     */
     private final AnimalRepository animalRepository;
 
     /**
@@ -57,3 +63,4 @@ public class PetStoreController {
         return animalRepository.findAnimalsByPetStore(petStoreId);
     }
 }
+

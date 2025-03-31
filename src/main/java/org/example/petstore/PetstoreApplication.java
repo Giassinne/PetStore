@@ -1,3 +1,13 @@
+/**
+ * Contains all the classes and interfaces related to the pet store application.
+ * <p>
+ * This package includes models, repositories, services, enums, constants and controllers
+ * to handle the operations related to pet stores, products, and animals.
+ * </p>
+ *
+ * @author Your Name
+ * @since 1.0
+ */
 package org.example.petstore;
 
 import org.example.petstore.animalerie.constants.Constants;
@@ -14,11 +24,26 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 
+
+/**
+ * Main class for the Petstore application.
+ * <p>
+ * This is the entry point for the Spring Boot application, responsible for launching the application and initializing the database with
+ * pet stores, products, and animals.
+ * </p>
+ *
+ * @author Your Name
+ * @version 1.0
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
 
-
+    /**
+     * Main method to run the Petstore application.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) {
         SpringApplication.run(PetstoreApplication.class, args);
     }
@@ -27,15 +52,15 @@ public class PetstoreApplication {
      * Initializes the database with pet stores, products, and animals.
      *
      * @param petStoreRepository Repository for saving pet store data.
-     * @param productRepository Repository for saving product data.
-     * @param animalRepository Repository for saving animal data.
+     * @param productRepository  Repository for saving product data.
+     * @param animalRepository   Repository for saving animal data.
      * @return A CommandLineRunner that will initialize the database.
      */
     @Bean
     CommandLineRunner initDatabase(
-           final PetStoreRepository petStoreRepository,
-           final ProductRepository productRepository,
-           final AnimalRepository animalRepository) {
+            final PetStoreRepository petStoreRepository,
+            final ProductRepository productRepository,
+            final AnimalRepository animalRepository) {
         return args -> {
             // Create  Addresses
             Address address1 = new Address();

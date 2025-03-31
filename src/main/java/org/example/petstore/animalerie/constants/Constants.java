@@ -1,3 +1,10 @@
+/**
+ * This package contains constant values used throughout the PetStore application.
+ * <p>
+ * The constants defined here are primarily used to maintain consistency
+ * and avoid hardcoded values in different parts of the system.
+ * </p>
+ */
 package org.example.petstore.animalerie.constants;
 
 /**
@@ -13,7 +20,7 @@ package org.example.petstore.animalerie.constants;
  * * @author Your Name
  * * @version 1.0
  */
-public class Constants {
+public final class Constants {
     public static final double PRICE_PRODUCT_1 = 29.99;
     public static final double PRICE_PRODUCT_2 = 9.99;
     public static final double PRICE_PRODUCT_3 = 14.99;

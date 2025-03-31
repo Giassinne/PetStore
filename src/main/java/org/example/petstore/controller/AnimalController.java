@@ -28,6 +28,9 @@ import java.util.List;
 @RequestMapping("/api/animaux")
 public class AnimalController {
 
+    /**
+     * Service for handling business logic related to animals.
+     */
     private final AnimalService animalService;
 
 
@@ -50,3 +53,4 @@ public class AnimalController {
         return ResponseEntity.ok(animals);  // Retourne HTTP 200 avec la liste des animaux
     }
 }
+

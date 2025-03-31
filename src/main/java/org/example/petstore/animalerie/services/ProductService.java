@@ -27,7 +27,15 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+
+    /**
+     * Repository for accessing product data.
+     */
     private final ProductRepository productRepository;
+
+    /**
+     * Logger instance for logging important service-level information.
+     */
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     /**
@@ -54,3 +62,4 @@ public class ProductService {
         return products.isEmpty() ? Optional.empty() : Optional.of(products.get(0));
     }
 }
+
